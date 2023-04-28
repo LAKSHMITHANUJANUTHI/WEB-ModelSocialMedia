@@ -35,8 +35,8 @@ a:hover {
   text-align: center;
   align-self: center;
 }
-body{
-  background-image: url(bgr.jpg);
+body{ 
+  background-image: url("../images/bgr.jpg");
   background-size: cover;
 }
 section {

@@ -40,7 +40,8 @@ function registerform1(e){
     e.preventDefault();
     let username1=document.getElementById('username').value;
     let email=document.getElementById('email').value;
-    let passwrd=document.getElementById('pswd').value;    
+    let passwrd=document.getElementById('pswd').value;
+    
 }  
 function loginform1(e)
 {
@@ -61,11 +62,12 @@ function postform1(e)
     const user1=new User(post1);
     console.log(user1);
 }
-let getBtn = document.getElementById("btn-details");
-if(getBtn) getBtn.addEventListener('click',getAllUsers);
-function getAllUsers(){
-    fetch("http://localhost:3000/users/test")
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));  
-}
+function getAllUsers()
+    {
+    fetch('http://localhost:3000/users/').
+    then((res)=>res.json()).
+    then((data)=>console.log(data))
+    .catch(err => {
+        console.log(err.message);
+      })
+    }
