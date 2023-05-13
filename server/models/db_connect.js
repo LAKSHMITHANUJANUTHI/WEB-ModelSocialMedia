@@ -1,19 +1,12 @@
-// require('dotenv').config();
+require('dotenv').config();
 const mysql = require('mysql2');
 
-// const con = mysql.createConnection({
-//   host : process.env.MYSQL_HOST,
-//   user : process.env.MYSQL_USERNAME,
-//   password: process.env.MYSQL_PASSWORD,
-//   database: process.env.MYSQL_DB
-// });
-
 const con = mysql.createConnection({
-    host : "localhost",
-    user : "",
-    password: "",
-    database: ""
-  });
+host : process.env.MYSQL_HOST,
+user : process.env.MYSQL_USERNAME,
+password: process.env.MYSQL_PASSWORD,
+database: process.env.MYSQL_DB
+});
 
 
 const query = (sql,binding) => {
@@ -35,4 +28,3 @@ con.connect(function (err){
 });
 
 module.exports = {con, query};
-app.listen(PORT, () => console.log(`Server started on PORT ${PORT}!!!`))
